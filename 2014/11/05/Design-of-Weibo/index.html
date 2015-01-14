@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>新浪微博V6.0的设计 | 小圆子酱酱</title>
+  <meta name="author" content="Cynthia Yang">
+  
+  <meta name="description" content="十月，微博web版V6.0公测，不久，所有用户即强制升级为此版本。没想到，此举却引发了用户山呼海啸般的吐槽，许多人要求改回旧版，360浏览器甚至顺势推出了一键回到旧版微博的功能。
+V6真有那么丑么？我们先来看看用户的槽点都在哪里。在微博上搜索“新版微博”或“微博改版”可以看到很多相关微博，集中一下，">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="新浪微博V6.0的设计"/>
+  <meta property="og:site_name" content="小圆子酱酱"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="小圆子酱酱" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">小圆子酱酱</a></h1>
+  <h2><a href="/">减肥中，禁止投喂</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/about">About</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2014-11-05T08:45:27.000Z"><a href="/2014/11/05/Design-of-Weibo/">11月 5 2014</a></time>
+      
+      
+  
+    <h1 class="title">新浪微博V6.0的设计</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>十月，微博web版V6.0公测，不久，所有用户即强制升级为此版本。没想到，此举却引发了用户山呼海啸般的吐槽，许多人要求改回旧版，360浏览器甚至顺势推出了一键回到旧版微博的功能。</p>
+<p>V6真有那么丑么？我们先来看看用户的槽点都在哪里。在微博上搜索“新版微博”或“微博改版”可以看到很多相关微博，集中一下，用户主要集中反映了如下问题：</p>
+<ul>
+<li>强制升级，不爽。不爽不爽就是不爽，任你长成什么样都是不爽！</li>
+<li>微博不是一贯都很丑么。丑逼就是丑惯了，这次也不用想，就是一个字，丑！</li>
+<li>QQ空间即视感</li>
+<li>搭配自定义模板背景图简直不忍直视</li>
+<li>圆形头像是几个意思。。名字都显示不全，“江宁公安”只能显示为“辽宁公安”好么！</li>
+<li>在王校长的带领下，投诉“广告太多”（就好像原来广告不多似的= =）</li>
+<li>原来习惯的功能找不到了！（同学你是说游戏广场啦还是会员入口啦？）</li>
+</ul>
+<p>其实上面只是说笑啦，我并没有真的去认真统计用户的反馈，我只是想说明，很多人在面对新事物时都有不假思索的逃避倾向，所以人总是喜欢呆在自己的comfort zone。而且，大多数用户并不懂得和在乎页面的审美性，他们可能更关注的是“好用不好用”，而由于不熟悉带来的非常武断的“不好用”的感觉很容易泛化为“丑！”。所有比较彻底的变革都会面临这个问题，比如ios7刚出来的时候，大家的反应也是一样，一个字“丑！”，但是现在还有人觉得它丑么？反正我觉得挺好看的。</p>
+<p>不过，微博确实不那么好看，尤其是在使用了自定义换肤之后，微博UDC设计中心也自嘲到“这是自己挖的一个坑”“自定义换肤在UI界就是IE6一样的存在”。但是，不能否认的是，新版微博在降噪、简洁化方面确实有了非常大的进步，使用体验也是不错的。至于为什么不够“好看”，私以为是配色的问题，不过这个还是留待以后研究吧，今天我就先从一个菜鸟预备设计师的角度来分析一下新版微博的整体布局和设计。</p>
+<p>首先，三栏布局。我认为三栏布局对微博这样一个以信息流为主要构成的网站是比较合适的。左侧的分组可以让用户方便的查看同一类别的信息，并且这个分组是固定在页面左侧的，不会随着中间栏下滑而下滑，这样就可以不必回到页面顶端而随时查看某一分组，非常贴心。同时，页面右侧的热门话题栏目的设置也是有必要的，毕竟很多人通过网页浏览微博时说明Ta处于一种相对无聊的状态，热门话题可以很容易抓住眼球，导入流量，而这个栏目并不固定在页面上，随着用户向下滑动，热门话题不再展示，这种设计减少了对用户的打扰。总之，三栏的设计既能够帮助网站引导流量吸引眼球又方便用户使用，我觉得是相对合理的，Twitter和Facebook都采用了三栏的布局。至于有人说三栏使每一条微博展示的空间变小了，感觉困住了，我倒觉得这个布局还比较符合人眼球的运动规律，信息布局在中央，可以方便的扫描，如果宽度太大，就会显得过于分散，也不方便浏览。</p>
+<p>其次，卡片式设计。每条微博都封装成一个卡片，微博间的空隙变得很大，这也是用户吐槽较多的地方，认为降低了浏览效率，信息层级不够清晰，整个界面过于散乱。魅族切图工陈希老师就认为：V6的设计是卡片化设计的反例。</p>
+<blockquote>
+<p>过渡使用:众多层级一致的卡片，无法让用户专注于最重要的内容。可以将不重要的信息，尽可能归纳到一个卡片之内，例如侧边，那样视觉上才会有轻重的优先级，更专注于内容的展示。</p>
+</blockquote>
+<p>对于这一点，微博UDC设计中心在《水器相形——新版微博设计录》中写道：</p>
+<blockquote>
+<p>Card化设计让每组内容都能规规矩矩的呈现，各类内容能被快速识别。例如微博核心Feed区里地图片微博、多图微博、内容推荐（关系推荐、音乐推荐等）、文字微博…原本参差不齐形态各异的内容都被相同的card容器分装起来有序陈列。</p>
+<p>现如今不缺内容量的微博，由海量内容输出转向垂直内容生产势在必行。Card样式相比传统list确实能让用户更加专注内容，不再是上至下一条接一条的刷，而是提供便捷并鼓励用户主动寻找自己感兴趣的内容。</p>
+</blockquote>
+<p>Card真的有这么大的功效吗？说实话，我还没有感觉到。既没有觉得它能让我更快速识别内容，也没觉得能让我更专注内容。但一眼看上去变干净了的视觉效果是有的。我私以为，Card化设计最大的好处是跨端设计的统一，在PC和手机上都有相似的视觉效果。</p>
+<p>其实，从功能上讲，我觉得微博做的已经不错了，几个核心功能：浏览、转发、评论、发微博，都实现的干净利落，基本没有冗余。和Twitter相比，也许不够美观明快，但从易用性上来讲，我个人觉得微博是胜出Twitter的。Twitter会隐藏原文的图片和内容，点击之后才展开（好像这种方法才真的是强迫用户专注于内容）；Twitter会用大字号显示转推数和收藏数，我一度以为点击那个地方直接就可以实现转推或收藏。当然了，Twitter最大的优点是干净整洁，设计统一、美观，和微博相比，要轻许多。但毕竟是在不同的文化氛围中使用，没有经过调研，谁又知道中国用户是不是喜欢热闹一点、重一点更甚于简洁明快呢？</p>
+<p>最后总结一下，我要给V6.0w微博点个赞。但有一个小BUG：微博左侧分组栏并没有使用卡片化的设计，似乎没有保持设计上的统一性，是否需要修改一下？（跟大家讨论）</p>
+<p>——————————我是分割线——————————</p>
+<p>后记：这篇文章拖了好久，始终写不出来。这是我的第一篇设计观察相关的博客，之前对产品设计只是停留在看看和在闲聊中评论两句，直到真的需要把自己的思考整理成文，才发现自己真的还差得很远。不论是思维方式、知识储备还是审美感觉，都只是门外汉水平。所以以后我还是先尽量通过整理记录他人看法，稍微加一点自己评论的方式进行写作，在学习中提升。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">留言</h1>
+
+  
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+  
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:cynthia-yang.github.io">
+  </form>
+</div>
+
+  
+
+  
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 Cynthia Yang
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+var disqus_shortname = 'blogofcynthia';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>
