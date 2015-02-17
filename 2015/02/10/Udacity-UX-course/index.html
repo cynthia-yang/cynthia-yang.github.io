@@ -6,7 +6,12 @@
   <title>Udacity课程学习笔记：《UX Design for Mobile Developers》 | 小圆子酱酱</title>
   <meta name="author" content="Cynthia Yang">
   
-  <meta name="description" content="这门课程有两个特点：第一，这是一门为Developers准备的交互设计入门课，所以重点在于解析设计思维，哪些程序猿思维是在设计中应该避免的。在课程开始两位讲师就在强调，本课的目的是帮你成为一个design minded developer.第二，这门课还有一个小标题：Learn to Design ">
+  <meta name="description" content="这门课程有两个特点：第一，这是一门为Developers准备的交互设计入门课，所以重点在于解析设计思维，哪些程序猿思维是在设计中应该避免的。在课程开始两位讲师就在强调，本课的目的是帮你成为一个design minded developer.第二，这门课还有一个小标题：Learn to Design a 5-Star Android App，讲师是Google的开发大使和Udacity的安卓交互设计师，所以这是一个基于安卓的课，但是由于只是讲设计思维，其实在什么平台都是通用的。
+课程从介绍什么是UX以及什么是用户体验开始。
+
+好的交互设计的全部使命就是make users happy。视觉和非视觉的所有元素（代码）构成了用户体验。好的用户体验依赖所有人的共同努力，前端、后端，工程师、设计师、产品经理。
+
+设计思维最重要的原则：一定要先从全局着眼，切忌一上来就thinking too detailed！【据说这是程序猿大人们常犯的毛病喔~】比如，你想要改善用户的注册/登录体验，你可能会想去改变字体、改变行距等等让注册表看上去flow better，但也许最好的解决策略是not to have one！用“Sign In with Google”或“用微博账号登录”代替吧！【圆子酱：最开始听到这里时确实有一种相当blow my mind的感觉，当然这只是一个比较极端的例子，意在说明：全局思考有多重要。千万不要一开始就陷入小修小补的思维定势中】同理，在支付的时候，不要让用户填一大堆信息啦，直接“用支付宝支付”吧~【圆子酱：本土化翻译，当然人家原文说的是Google Checkout和Paypal Checkout啦^^】">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -65,29 +70,30 @@
 <blockquote>
 <p>好的交互设计的全部使命就是make users happy。<br>视觉和非视觉的所有元素（代码）构成了用户体验。<br>好的用户体验依赖所有人的共同努力，前端、后端，工程师、设计师、产品经理。</p>
 </blockquote>
-<p><strong>设计思维最重要的原则：一定要先从全局着眼，切忌一上来就thinking too detailed！【据说这是程序猿大人们常犯的毛病喔~】</strong>比如，你想要改善用户的<strong>注册/登录</strong>体验，你可能会想去改变字体、改变行距等等让注册表看上去flow better，但也许最好的解决策略是not to have one！用“Sign In with Google”或“用微博账号登录”代替吧！【圆子酱：最开始听到这里时确实有一种相当blow my mind的感觉，当然这只是一个比较极端的例子，意在说明：全局思考有多重要。千万不要一开始就陷入小修小补的思维定势中】同理，在支付的时候，不要让用户填一大堆信息啦，直接“用支付宝支付”吧~【圆子酱：本土化翻译，当然人家原文说的是Google Checkout和Paypal Checkout啦^^】</p>
+<p><strong>设计思维最重要的原则：一定要先从全局着眼，切忌一上来就thinking too detailed！【据说这是程序猿大人们常犯的毛病喔~】</strong>比如，你想要改善用户的<strong>注册/登录</strong>体验，你可能会想去改变字体、改变行距等等让注册表看上去flow better，但也许最好的解决策略是not to have one！用“Sign In with Google”或“用微博账号登录”代替吧！【圆子酱：最开始听到这里时确实有一种相当blow my mind的感觉，当然这只是一个比较极端的例子，意在说明：全局思考有多重要。千万不要一开始就陷入小修小补的思维定势中】同理，在支付的时候，不要让用户填一大堆信息啦，直接“用支付宝支付”吧~【圆子酱：本土化翻译，当然人家原文说的是Google Checkout和Paypal Checkout啦^^】<br><a id="more"></a></p>
 <p>所以设计一定要强调以用户为中心，其实就是以用户的体验为中心。这句话已经被讲的太滥了，但可能很多人并没有对其深刻理解。我自己也是到今天才明白，这句话不是说说而已，它是你在App开发的最初就要确立并在整个开发流程中贯彻的理念。很重要的一点就是：一定要根据用户的需要来设计功能和交互逻辑以及视觉元素，是根据用户需要！不是根据美观与否、实用与否，不是根据自己对设计的要求和理解，也不是根据任何设计原则，用户的需要是唯一的衡量标准！【要明确设计原则是为用户体验服务的，不要被它框住喔，如上面的例子所讲的，有的时候根本连设计都免了，还用什么设计原则啊~】</p>
 <p>那么，<strong>正确的设计流程</strong>应该是这样的：</p>
 <ul>
-<li>Step1:确定目标用户；</li>
-<li>Step2:设立一个persona（用户模型），确定一些典型的use cases（使用场景）；</li>
-<li>Step3:进行user research（用户调研），并使用用户调研的结果对persona和use cases进行调整、补充；</li>
-<li>Step4:根据完善后的persona和use cases确定App的feature list（功能列表）</li>
-<li>Step5:绘制线框图，模拟用户使用流程</li>
-<li>Step6:start coding吧！^^</li>
+<li>Step1: 确定目标用户；</li>
+<li>Step2: 设立一个persona（用户模型），确定一些典型的use cases（使用场景）；</li>
+<li>Step3: 进行user research（用户调研），并使用用户调研的结果对persona和use cases进行调整、补充；</li>
+<li>Step4: 根据完善后的persona和use cases确定App的feature list（功能列表）</li>
+<li>Step5: 绘制线框图，模拟用户使用流程</li>
+<li>Step6: start coding吧！^^</li>
 </ul>
 <h3 id="Step1_&amp;_Step_2：关于persona。">Step1 &amp; Step 2：关于persona。</h3>
-<p>以用户为中心的设计就是：在脑中要有一个具体清晰的用户形象。有两个偏见是需要避免的：</p>
+<p>以用户为中心的设计就是：在脑中要有一个具体清晰的用户形象。有<strong>两个偏见</strong>是需要避免的：</p>
 <ul>
 <li>首先，也是最重要的：避免开发人员自身的偏见。由于开发者是熟悉软件的人，所以我们可能意识不到自己的设想与用户的实际使用情况是非常不同的，带着这种错误的预设进行开发的话，开发出来的只是适合自己的产品。</li>
-<li>其次，还要避免approach bias，这是指在着手进行产品开发时，工程师往往考虑的是功能如何实现的问题，而设计师主要考虑的是如何理顺功能逻辑的问题，这是两种不同的approach。我们应该做的是把这二者整合起来，be a design minded developer or a development minded designer。【圆子酱觉着，其实这项本领应该由产品汪们去承担哦，不然产品汪真的只有打杂的份儿了。= =】总之就是，工程师不能一上来就想着调用API就开始coding了，设计师也不能一上来就想着画图了，必须要有清晰的用户意识。最好的方式就是用persona。<br>Persona:某一产品的一群真实用户的典型代表。<br>Use case:描述一个persona何时、何地、怎样使用产品来完成Ta的一项任务的情境。【必须是针对一个特定Persona的真实使用情况哦，有的时候可以用合情合理的推测来完成，有的时候则需要进行用户调研才能了解。】</li>
+<li>其次，还要避免approach bias，这是指在着手进行产品开发时，工程师往往考虑的是功能如何实现的问题，而设计师主要考虑的是如何理顺功能逻辑的问题，这是两种不同的approach。我们应该做的是把这二者整合起来，be a design minded developer or a development minded designer。【圆子酱觉着，其实这项本领应该由产品汪们去承担哦，不然产品汪真的只有打杂的份儿了。= =】总之就是，工程师不能一上来就想着调用API就开始coding了，设计师也不能一上来就想着画图了，必须要有清晰的用户意识。最好的方式就是用persona。</li>
 </ul>
+<p>Persona:某一产品的一群真实用户的典型代表。<br>Use case:描述一个persona何时、何地、怎样使用产品来完成Ta的一项任务的情境。【必须是针对一个特定Persona的真实使用情况哦，有的时候可以用合情合理的推测来完成，有的时候则需要进行用户调研才能了解。】</p>
 <h3 id="Step_3：user_research">Step 3：user research</h3>
 <p>用户调研可以是一项精密、浩大的工程，也可以是简单的和很多人交谈，不需要多么完善的技术。我们每个人都是经验和预设结论的集合体【这里有一点哲学意味了哦，我们每个人都有很多预设信念，我们的经验和知识积累决定了我们是谁，决定了我们的思维，所以我们一定要跳出自己的头脑从其他用户，从真实用户的视角去看待产品】，所以需要跳出自己的视角，想象另一个人的思维，去看待产品。</p>
 <h3 id="Step_4：根据persona和use_cases确定feature_list">Step 4：根据persona和use cases确定feature list</h3>
 <p>这一步其实不太用多说，只需要根据用户模型进行合情合理的推断即可，这里用到的主要是常识，当然，也需要一定的对人类行为的洞察力。</p>
 <p>在这里需要特别考虑到的是：移动用户行为与桌面用户行为的不同。</p>
-<h4 id="Web/Desktop_persona:">Web/Desktop persona:</h4>
+<h3 id="Web/Desktop_persona:">Web/Desktop persona:</h3>
 <ul>
 <li>Always plugged in</li>
 <li>Reliable &amp; fast network</li>
@@ -95,7 +101,7 @@
 <li>Physical keyboard &amp; mouse</li>
 <li>Seated with attention<br>（desktop app 和 mobile app的另一个区别是桌面应用关掉了就是关掉了，但移动应用关掉之后却会继续在后台运行，搜集数据）</li>
 </ul>
-<h4 id="Mobile_persona:">Mobile persona:</h4>
+<h3 id="Mobile_persona:">Mobile persona:</h3>
 <ul>
 <li>Finite data &amp; battery</li>
 <li>Divided attention</li>
@@ -111,7 +117,7 @@
 <li>单手持握时使用的app，控件按钮摆放的位置？<br>——最好是中间，避免顶部和底部，使用大字号，避免可触区域过小。<br>讲师介绍了ow zone的概念，如下图：<br><img src="http://hello-world-hello.qiniudn.com/ow zone.png" alt="ow zone"><br>ow zone是需要避免放置交互控件的区域，中间绿色部分叫做temp zone，是最鼓励使用的区域。</li>
 <li>对于有限的屏幕空间，有一些方法可以帮助优化UI。【这一部分是干货，我下面拿出来重点讲一下】</li>
 </ul>
-<h4 id="响应式设计中有效利用屏幕空间优化UI的技巧【小屏幕转大屏幕该如何设计？】">响应式设计中有效利用屏幕空间优化UI的技巧【小屏幕转大屏幕该如何设计？】</h4>
+<h3 id="响应式设计中有效利用屏幕空间优化UI的技巧【小屏幕转大屏幕该如何设计？】">响应式设计中有效利用屏幕空间优化UI的技巧【小屏幕转大屏幕该如何设计？】</h3>
 <ol>
 <li>大屏幕的UI设计中经常出现的问题<br>a.文字段落过长【为了省事就用视频截图了哈~求处女座不喷】<br><img src="http://hello-world-hello.qiniudn.com/Excessive line lengths.png" alt="Excessive line lengths"><br>如上图所示的这个APP界面中，文字和图片占据了整个屏幕的宽度，在一个较小的（如手机）屏幕上，这样做或许可以，但在大屏上，则会不利于阅读。<strong>保持舒适阅读体验的最佳文字段长是45-75个字符。</strong><br>b.内容放置不平衡<br><img src="http://hello-world-hello.qiniudn.com/Unbalanced content.png" alt="Unbalanced content"><br>上图中，文字和图片等内容都挤在屏幕的左上方，其他部分大量留白，这会给用户一种非常不平衡的感觉，好像没有为自己的设备进行专门的优化。<br>c.没有充分利用可用空间<br><img src="http://hello-world-hello.qiniudn.com/Not making use of available estate.png" alt="Not making use of available estate"><br>上图这样的图片应用中，图片以缩略图的形式展示，并且都挤在一边，非常遗憾的没有体现出大屏的优势。</li>
 </ol>
@@ -136,7 +142,7 @@
 <li>有目的的使用。确实能提升用户体验完善产品功能的时候才使用。</li>
 <li>要尊重用户。对用户信息的获取是为了更好的服务，让用户感到高兴，不要让用户感觉到恐怖。【过度使用用户信息会让他们觉得被监视和不安全哦~】</li>
 </ul>
-<p>这就是本课程的全部内容啦。一拖再拖，整理的也是十分辛苦。<br>以上。</p>
+<p>这就是本课程的全部内容啦。一拖再拖，整理的也是十分辛苦。尤其是动用了渣渣渣的PS技术，捂脸……<br>以上。</p>
 
       
     </div>
